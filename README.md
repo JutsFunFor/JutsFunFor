@@ -1,24 +1,18 @@
-# Embedded FPGA engineer
-
-I bring boards up — mostly Xilinx / AMD silicon, UltraScale+ and RFSoC, and
-usually starting from nothing but a schematic, because that's often the only
-documentation that exists.
-
-Everything on this profile is open.
+## Open projects
 
 ---
 
-## xczu27dr-rfsoc
+### [xczu27dr-rfsoc](https://github.com/JutsFunFor/xczu27dr-rfsoc)
 
-### [Board support package for a Xilinx XCZU27DR RFSoC →](https://github.com/JutsFunFor/xczu27dr-rfsoc)
+**Board support package for a Xilinx XCZU27DR RFSoC**
 
 [![The XCZU27DR RFSoC board](https://raw.githubusercontent.com/JutsFunFor/xczu27dr-rfsoc/main/board.jpg)](https://github.com/JutsFunFor/xczu27dr-rfsoc)
 
-This board ships with a schematic and not much else — no manual, no pin list, no
-worked examples. So I wrote the manual. Every interface was brought up one at a
-time, and each one has a script you can actually run plus a page explaining the
-pins, the registers, and the things that cost you an afternoon if nobody warns
-you first.
+The board ships with a schematic and not much else — no manual, no pin list, no
+worked examples. This repository is the manual. Every interface was brought up
+one at a time, and each one has a script you can actually run plus a page
+explaining the pins, the registers, and the things that cost you an afternoon if
+nobody warns you first.
 
 Seven interfaces, every result measured on real hardware:
 
@@ -35,7 +29,7 @@ Verilog · Tcl · Vivado · Vitis
 
 ---
 
-## Earlier open work
+### Earlier open work
 
 Embedded computer vision and video, mostly running on small hardware.
 
@@ -46,7 +40,3 @@ Embedded computer vision and video, mostly running on small hardware.
 | [**yolo**](https://github.com/JutsFunFor/yolo) | YOLO training and inference, containerised for running on a server |
 | [**CLIP-classification-web-app**](https://github.com/JutsFunFor/CLIP-classification-web-app) | Fine-tuning OpenAI CLIP on a custom product-image dataset, served behind a web UI for fast prototyping |
 | [**jsmpeg_streaming**](https://github.com/JutsFunFor/jsmpeg_streaming) | RTSP video streaming through NAT using JSMpeg, ffmpeg and a websocket relay |
-
----
-
-<sub>Verilog · Tcl · Vivado / Vitis · Python · JavaScript · Docker</sub>
