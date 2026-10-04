@@ -8,11 +8,9 @@
 
 [![The XCZU27DR RFSoC board](https://raw.githubusercontent.com/JutsFunFor/xczu27dr-rfsoc/main/board.jpg)](https://github.com/JutsFunFor/xczu27dr-rfsoc)
 
-The board ships with a schematic and not much else — no manual, no pin list, no
-worked examples. This repository is the manual. Every interface was brought up
+The board ships with a schematic and you should treat this repository as the manual. Every interface was brought up
 one at a time, and each one has a script you can actually run plus a page
-explaining the pins, the registers, and the things that cost you an afternoon if
-nobody warns you first.
+explaining the pins and the registers.
 
 Seven interfaces, every result measured on real hardware:
 
