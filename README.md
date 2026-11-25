@@ -1,40 +1,24 @@
-## Open projects
+## FPGA board bring-up and embedded vision
 
----
+I build board support packages for AMD/Xilinx FPGAs, with runnable tests, pin maps, and measurements from real hardware.
 
-### [xczu27dr-rfsoc](https://github.com/JutsFunFor/xczu27dr-rfsoc)
+### FPGA board support
 
-**Board support package for a Xilinx XCZU27DR RFSoC**
+**[XCZU27DR RFSoC](https://github.com/JutsFunFor/xczu27dr-rfsoc)** · MIT
 
-[![The XCZU27DR RFSoC board](https://raw.githubusercontent.com/JutsFunFor/xczu27dr-rfsoc/main/board.jpg)](https://github.com/JutsFunFor/xczu27dr-rfsoc)
+A board support package with Vivado Tcl scripts for JTAG, DDR4, QSFP28, Gigabit Ethernet, clocking, and RF converter loopback. On the board, all 12 DDR4 PHY training stages passed, all eight GTY lanes ran at 10.3125 Gbps with zero observed PRBS-31 bit errors, and the RF loopback recovered 125 MHz and 375 MHz tones.
 
-The board ships with a schematic and you should treat this repository as the manual. Every interface was brought up
-one at a time, and each one has a script you can actually run plus a page
-explaining the pins and the registers.
+[Measured results](https://github.com/JutsFunFor/xczu27dr-rfsoc#what-was-actually-measured) · [Setup and first test](https://github.com/JutsFunFor/xczu27dr-rfsoc#getting-started) · [Board photo](https://github.com/JutsFunFor/xczu27dr-rfsoc/blob/main/board.jpg)
 
-Seven interfaces, every result measured on real hardware:
+**[ALIVU13P accelerator card](https://github.com/JutsFunFor/alivu13p)** · Apache-2.0
 
-| | |
-|---|---|
-| **DDR4** | 4 GB, 12 of 12 PHY training stages, patterns hold with no aliasing |
-| **GTY transceivers** | 8 lanes at 10.3125 Gbps through QSFP28, PRBS-31, zero bit errors |
-| **RF converters** | tones at 125 and 375 MHz played out and captured back at 4.0 GSPS |
-| **Gigabit Ethernet** | GEM3 + RTL8211FD at 1000 Mb full duplex, frames verified by the host NIC |
-| **Clocking** | all four GTY reference inputs counted in-fabric against a known reference |
-| **JTAG and I/O** | chain and DAP memory access, LEDs, and the bank-voltage question settled from the schematic |
+Board bring-up for an AMD/Xilinx XCVU13P card, with Vivado designs and Linux host-side tools. Verified PCIe Gen3 enumeration, DMA to BRAM and UltraRAM, and read/write tests across all four DDR4 channels. The status table shows which interfaces have been tested on hardware and which have only been built.
 
-Verilog · Tcl · Vivado · Vitis
+[Interface status](https://github.com/JutsFunFor/alivu13p/blob/main/STATUS.md) · [Hardware validation log](https://github.com/JutsFunFor/alivu13p/blob/main/docs/validation-2026-09-17.md)
 
----
+### Earlier computer vision and video projects
 
-### Earlier open work
-
-Embedded computer vision and video, mostly running on small hardware.
-
-| | |
-|---|---|
-| [**coffee_detection**](https://github.com/JutsFunFor/coffee_detection) | Detecting coffee inside a cup on a Raspberry Pi, comparing classical image processing against a TensorFlow 2 detection model |
-| [**yolov5-main**](https://github.com/JutsFunFor/yolov5-main) | A YOLOv5 coffee detector built out of that work |
-| [**yolo**](https://github.com/JutsFunFor/yolo) | YOLO training and inference, containerised for running on a server |
-| [**CLIP-classification-web-app**](https://github.com/JutsFunFor/CLIP-classification-web-app) | Fine-tuning OpenAI CLIP on a custom product-image dataset, served behind a web UI for fast prototyping |
-| [**jsmpeg_streaming**](https://github.com/JutsFunFor/jsmpeg_streaming) | RTSP video streaming through NAT using JSMpeg, ffmpeg and a websocket relay |
+- [CLIP classification web app](https://github.com/JutsFunFor/CLIP-classification-web-app) fine-tunes CLIP on a custom product-image dataset and serves it through a web UI.
+- [Coffee detection on Raspberry Pi](https://github.com/JutsFunFor/coffee_detection) compares classical vision with a TensorFlow 2 model. [YOLOv5 coffee detector](https://github.com/JutsFunFor/yolov5-main) continues that work.
+- [JSMpeg streaming](https://github.com/JutsFunFor/jsmpeg_streaming) streams RTSP video to a browser with FFmpeg and a WebSocket relay.
+- [YOLO training and inference](https://github.com/JutsFunFor/yolo) packages both workflows in Docker.
