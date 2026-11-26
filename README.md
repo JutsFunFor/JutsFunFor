@@ -1,22 +1,13 @@
-## FPGA board bring-up and embedded vision
+# FPGA board bring-up and embedded vision
 
-I build board support packages for AMD/Xilinx FPGAs, with runnable tests, pin maps, and measurements from real hardware.
+I build and test FPGA board support on the bench. Below are the two boards I work on, what I measured, and the test records. My camera projects began with a question from a coffee machine: is there coffee in the cup?
 
-### FPGA board support
+| [XCZU27DR RFSoC](https://github.com/JutsFunFor/xczu27dr-rfsoc) | [ALIVU13P accelerator](https://github.com/JutsFunFor/alivu13p) |
+| --- | --- |
+| [![XCZU27DR board on the bench with loopback cables attached](https://raw.githubusercontent.com/JutsFunFor/xczu27dr-rfsoc/main/board.jpg)](https://github.com/JutsFunFor/xczu27dr-rfsoc) | [![ALIVU13P Virtex UltraScale+ accelerator card](https://raw.githubusercontent.com/JutsFunFor/alivu13p/main/board.png)](https://github.com/JutsFunFor/alivu13p) |
+| Eight GTY lanes tested at 10.3125 Gbps. RF loopback recovered tones at 125 and 375 MHz. [See the measurements](https://github.com/JutsFunFor/xczu27dr-rfsoc#what-was-actually-measured). | PCIe DMA to BRAM and UltraRAM, plus read/write tests on all four DDR4 channels. [Read the bench log](https://github.com/JutsFunFor/alivu13p/blob/main/docs/validation-2026-09-17.md). |
 
-**[XCZU27DR RFSoC](https://github.com/JutsFunFor/xczu27dr-rfsoc)** · MIT
-
-A board support package with Vivado Tcl scripts for JTAG, DDR4, QSFP28, Gigabit Ethernet, clocking, and RF converter loopback. On the board, all 12 DDR4 PHY training stages passed, all eight GTY lanes ran at 10.3125 Gbps with zero observed PRBS-31 bit errors, and the RF loopback recovered 125 MHz and 375 MHz tones.
-
-[Measured results](https://github.com/JutsFunFor/xczu27dr-rfsoc#what-was-actually-measured) · [Setup and first test](https://github.com/JutsFunFor/xczu27dr-rfsoc#getting-started) · [Board photo](https://github.com/JutsFunFor/xczu27dr-rfsoc/blob/main/board.jpg)
-
-**[ALIVU13P accelerator card](https://github.com/JutsFunFor/alivu13p)** · Apache-2.0
-
-Board bring-up for an AMD/Xilinx XCVU13P card, with Vivado designs and Linux host-side tools. Verified PCIe Gen3 enumeration, DMA to BRAM and UltraRAM, and read/write tests across all four DDR4 channels. The status table shows which interfaces have been tested on hardware and which have only been built.
-
-[Interface status](https://github.com/JutsFunFor/alivu13p/blob/main/STATUS.md) · [Hardware validation log](https://github.com/JutsFunFor/alivu13p/blob/main/docs/validation-2026-09-17.md)
-
-### Earlier computer vision and video projects
+## From camera to inference
 
 - [CLIP classification web app](https://github.com/JutsFunFor/CLIP-classification-web-app) fine-tunes CLIP on a custom product-image dataset and serves it through a web UI.
 - [Coffee detection on Raspberry Pi](https://github.com/JutsFunFor/coffee_detection) compares classical vision with a TensorFlow 2 model. [YOLOv5 coffee detector](https://github.com/JutsFunFor/yolov5-main) continues that work.
